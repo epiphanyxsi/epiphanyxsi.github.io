@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="logo" href="index.html">My Portfolio</a>
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li><a href="index.html"><span class="icon">🏠</span>Home</a></li>
+          <li><a href="about.html"><span class="icon">👤</span>About Me</a></li>
+          <li><a href="projects.html"><span class="icon">📁</span>Projects</a></li>
+        </ul>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">🌙</button>
+      <button class="nav-toggle" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <h1 class="projects-heading">Projects</h1>
+    <p class="mono-text projects-intro">Below I listed one of my projects:</p>
+    <ul class="projects-list">
+      <li>
+        <h3>Project 1: How does hardware work?</h3>
+        <p class="mono-text">In this group project we constructed NOT, AND, OR, NAND gates on a solderless breadboard using the Arduino kit. </p>
+        <div>
+          <img src="project1.jpg" height="35" width="20" alt="AND gate on a breadboard">
+          <img src="project1pic.jpg" height="35" width ="20" alt="NOT gate building process">
+        </div>
+      </li>
+     
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Kamala.A — All rights reserved. </p>
+    <ul class="social-links">
+      <li><a href="https://github.com/epiphanyxsi" target="_blank" rel="noopener noreferrer" title="GitHub"><span class="social-icon">👨‍💻</span><span class="social-label">My Github</span></a></li>
+      <li><a href="https://www.codecademy.com/profiles/kamaa11" target="_blank" rel="noopener noreferrer" title="Codecademy"><span class="social-icon">💻</span><span class="social-label">My Codecademy</span></a></li>
+    </ul>
+  </footer>
+
+  <script>
+    (function(){
+      // Dark mode toggle
+      var themeToggle = document.getElementById('theme-toggle');
+      var isDarkMode = localStorage.getItem('darkMode') === 'true';
+      
+      if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+      }
+      
+      themeToggle.addEventListener('click', function(){
+        document.body.classList.toggle('dark-mode');
+        isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+        themeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+      });
+      
+      // Mobile menu toggle
+      var btn = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      btn.addEventListener('click', function(){
+        var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+      });
+    })();
+  </script>
+</body>
+</html>

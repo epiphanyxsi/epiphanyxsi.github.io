@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me — My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="logo" href="index.html">My Portfolio</a>
+      <div class="nav-center">
+        <ul class="nav-links">
+          <li><a href="index.html"><span class="icon">🏠</span>Home</a></li>
+          <li><a href="about.html"><span class="icon">👤</span>About Me</a></li>
+          <li><a href="projects.html"><span class="icon">📁</span>Projects</a></li>
+        </ul>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">🌙</button>
+      <button class="nav-toggle" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <article>
+      <h1>About Me</h1>
+      <p class="mono-text">Hello my name is Kamala! I'm a first year Computer Science student at ADA University.</p>
+      <p class="mono-text enjoy-text">I enjoy turning ideas into reality and I'm currently learning programming and improving my skills!</p>
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">HTML, CSS, JavaScript</span>
+            <span class="skill-percent">50%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 50%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Python</span>
+            <span class="skill-percent">40%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 40%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">C++</span>
+            <span class="skill-percent">15%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 30%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Project Management</span>
+            <span class="skill-percent">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Leadership</span>
+            <span class="skill-percent">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%;"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Creative Thinking</span>
+            <span class="skill-percent">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Language Skills</h3>
+      <div class="skills-container">
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">English</span>
+            <span class="skill-percent">100%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-progress" style="width:100%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Azerbaijani</span>
+            <span class="skill-percent">100%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-progress" style="width:100%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Russian</span>
+            <span class="skill-percent">100%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-progress" style="width:100%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Turkish</span>
+            <span class="skill-percent">85%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-header">
+            <span class="skill-name">Korean</span>
+            <span class="skill-percent">25%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-progress" style="width:25%"></div></div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Kamala.A — All rights reserved. </p>
+    <ul class="social-links">
+      <li><a href="https://github.com/epiphanyxsi" target="_blank" rel="noopener noreferrer" title="GitHub"><span class="social-icon">👨‍💻</span><span class="social-label">My Github</span></a></li>
+      <li><a href="https://www.codecademy.com/profiles/kamaa11" target="_blank" rel="noopener noreferrer" title="Codecademy"><span class="social-icon">💻</span><span class="social-label">My Codecademy</span></a></li>
+    </ul>
+  </footer>
+
+  <script>
+    (function(){
+      // Dark mode toggle
+      var themeToggle = document.getElementById('theme-toggle');
+      var isDarkMode = localStorage.getItem('darkMode') === 'true';
+      
+      if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+      }
+      
+      themeToggle.addEventListener('click', function(){
+        document.body.classList.toggle('dark-mode');
+        isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+        themeToggle.textContent = isDarkMode ? '☀️' : '🌙';
+      });
+      
+      // Mobile menu toggle
+      var btn = document.querySelector('.nav-toggle');
+      var links = document.querySelector('.nav-links');
+      btn.addEventListener('click', function(){
+        var expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        links.classList.toggle('open');
+      });
+    })();
+  </script>
+</body>
+</html>
